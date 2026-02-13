@@ -79,7 +79,7 @@ def set_bg(image_file):
         unsafe_allow_html=True
     )
 
-set_bg("flowers.jpg")
+set_bg("lily.jpg")
 
 # --------------------------------------------------
 # Header
