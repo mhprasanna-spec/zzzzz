@@ -57,8 +57,10 @@ kubectl apply -f ollama-pv.yaml
 🔹 STEP 3 — Ollama Deployment
 
 Create:
-
+```
 nano ollama-deployment.yaml
+```
+```
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -85,15 +87,19 @@ spec:
         - name: ollama-storage
           persistentVolumeClaim:
             claimName: ollama-pvc
+```
 
 Apply:
-
+```
 kubectl apply -f ollama-deployment.yaml
+```
 🔹 STEP 4 — Ollama Service (Internal Only)
 
 Create:
-
+```
 nano ollama-service.yaml
+```
+```
 apiVersion: v1
 kind: Service
 metadata:
@@ -105,6 +111,7 @@ spec:
     - port: 11434
       targetPort: 11434
   type: ClusterIP
+```
 
 Apply:
 
