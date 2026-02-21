@@ -38,27 +38,20 @@ def set_bg(image_file):
             color: #dddddd;
         }}
 
-        /* USER message */
-        div[data-testid="stChatMessage"][aria-label="user"] {{
-            background-color: #e3f2fd;
+        /* SAME STYLE FOR BOTH USER AND ASSISTANT */
+        div[data-testid="stChatMessage"] {{
+            background-color: rgba(255,255,255,0.95);
             color: #000000;
-            border-radius: 14px;
-            padding: 14px;
-            margin-bottom: 10px;
+            border-radius: 18px;
+            padding: 18px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }}
 
-        /* ASSISTANT message */
-        div[data-testid="stChatMessage"][aria-label="assistant"] {{
-            background-color: #ffffff;
-            color: #000000;
-            border-radius: 14px;
-            padding: 14px;
-            margin-bottom: 10px;
-        }}
-
-        /* Fix text visibility */
-        div[data-testid="stMarkdownContainer"] p {{
+        /* Ensure text is black */
+        div[data-testid="stChatMessage"] p {{
             color: #000000 !important;
+            font-size: 16px;
         }}
 
         /* Chat input bar */
