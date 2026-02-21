@@ -114,17 +114,21 @@ spec:
 ```
 
 Apply:
-
+```
 kubectl apply -f ollama-service.yaml
+```
 
 Now Ollama is reachable inside cluster at:
 
 http://ollama:11434
+
 🔹 STEP 5 — Streamlit Deployment
 
 Create:
-
+```
 nano streamlit-deployment.yaml
+```
+```
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -147,15 +151,18 @@ spec:
           env:
             - name: OLLAMA_HOST
               value: "http://ollama:11434"
-
+```
 Apply:
-
+```
 kubectl apply -f streamlit-deployment.yaml
+```
 🔹 STEP 6 — Streamlit Service (Expose to Browser)
 
 Create:
-
+```
 nano streamlit-service.yaml
+```
+```
 apiVersion: v1
 kind: Service
 metadata:
@@ -168,24 +175,26 @@ spec:
     - port: 80
       targetPort: 8501
       nodePort: 30007
+```
 
 Apply:
-
+```
 kubectl apply -f streamlit-service.yaml
+```
 🔹 STEP 7 — Pull LLaMA Model Inside Ollama Pod
 
 Very important 👇
 
 After ollama pod is running:
-
+```
 kubectl get pods
-
+```
 Find ollama pod name.
 
 Then:
-
+```
 kubectl exec -it <ollama-pod-name> -- ollama pull llama3.2:latest
-
+```
 Wait for model download.
 
 🔹 STEP 8 — Access Application
