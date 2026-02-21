@@ -26,13 +26,13 @@ Streamlit Deployment
 
 Streamlit Service (NodePort)
 
-STEP 1 — Push Your Streamlit Image (Already Done)
+## 🔹STEP 1 — Push Your Streamlit Image (Already Done)
 
 Make sure image exists on DockerHub:
 
 docker push prasanna369/zzzzz_streamlit:latest
 
-🔹 STEP 2 — Create Ollama Persistent Volume
+## 🔹 STEP 2 — Create Ollama Persistent Volume
 
 Create file:
 ```
@@ -54,7 +54,7 @@ Apply:
 ```
 kubectl apply -f ollama-pv.yaml
 ```
-🔹 STEP 3 — Ollama Deployment
+## 🔹 STEP 3 — Ollama Deployment
 
 Create:
 ```
@@ -93,7 +93,7 @@ Apply:
 ```
 kubectl apply -f ollama-deployment.yaml
 ```
-🔹 STEP 4 — Ollama Service (Internal Only)
+## 🔹 STEP 4 — Ollama Service (Internal Only)
 
 Create:
 ```
@@ -122,7 +122,7 @@ Now Ollama is reachable inside cluster at:
 
 http://ollama:11434
 
-🔹 STEP 5 — Streamlit Deployment
+## 🔹 STEP 5 — Streamlit Deployment
 
 Create:
 ```
@@ -156,7 +156,7 @@ Apply:
 ```
 kubectl apply -f streamlit-deployment.yaml
 ```
-🔹 STEP 6 — Streamlit Service (Expose to Browser)
+## 🔹 STEP 6 — Streamlit Service (Expose to Browser)
 
 Create:
 ```
@@ -181,7 +181,7 @@ Apply:
 ```
 kubectl apply -f streamlit-service.yaml
 ```
-🔹 STEP 7 — Pull LLaMA Model Inside Ollama Pod
+## 🔹 STEP 7 — Pull LLaMA Model Inside Ollama Pod
 
 Very important 👇
 
@@ -197,7 +197,7 @@ kubectl exec -it <ollama-pod-name> -- ollama pull llama3.2:latest
 ```
 Wait for model download.
 
-🔹 STEP 8 — Access Application
+## 🔹 STEP 8 — Access Application
 
 If EC2:
 
