@@ -218,7 +218,7 @@ http://<EC2_PUBLIC_IP>:30007
 
 Check everything:
 
-kubectl get pods
-kubectl get svc
-kubectl logs <streamlit-pod>
-kubectl logs <ollama-pod>
+- kubectl get pods
+- kubectl get svc
+- kubectl logs <streamlit-pod>
+- kubectl logs <ollama-pod>
