@@ -1,17 +1,21 @@
 ## Final Kubernetes Architecture
-Browser
-   ↓
-NodePort / Ingress
-   ↓
-Streamlit Service
-   ↓
-Streamlit Pod
-   ↓ (ClusterIP service)
-Ollama Service
-   ↓
-Ollama Pod
-   ↓
-Persistent Volume (model storage)
+<p align="center">
+
+Browser <br>
+↓ <br>
+NodePort / Ingress <br>
+↓ <br>
+Streamlit Service <br>
+↓ <br>
+Streamlit Pod <br>
+↓ (ClusterIP Service) <br>
+Ollama Service <br>
+↓ <br>
+Ollama Pod <br>
+↓ <br>
+Persistent Volume (Model Storage)
+
+</p>
 ---
 
 We will create:
