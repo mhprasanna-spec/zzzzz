@@ -1,4 +1,4 @@
-Final Kubernetes Architecture
+## Final Kubernetes Architecture
 Browser
    ↓
 NodePort / Ingress
@@ -12,6 +12,7 @@ Ollama Service
 Ollama Pod
    ↓
 Persistent Volume (model storage)
+---
 
 We will create:
 
@@ -34,9 +35,10 @@ docker push prasanna369/zzzzz_streamlit:latest
 🔹 STEP 2 — Create Ollama Persistent Volume
 
 Create file:
-'''
+```
 nano ollama-pv.yaml
-'''
+```
+```
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -47,10 +49,11 @@ spec:
   resources:
     requests:
       storage: 15Gi
-
+```
 Apply:
-
+```
 kubectl apply -f ollama-pv.yaml
+```
 🔹 STEP 3 — Ollama Deployment
 
 Create:
