@@ -25,6 +25,7 @@ The model runs inside the Ollama pod.
 
 ## 🏗️ Architecture
 
+```
 Browser
    ↓
 NodePort Service
@@ -34,4 +35,6 @@ Streamlit Pod
 Ollama Pod
    ↓
 TinyLlama Model (inside container)
+
+```
 
