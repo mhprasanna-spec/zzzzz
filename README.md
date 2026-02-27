@@ -131,3 +131,4 @@ Feel free to modify and extend it.
 
 
 Just tell me 😊
+# streamlit-ollama-k8s

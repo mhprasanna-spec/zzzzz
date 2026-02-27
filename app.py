@@ -1,5 +1,11 @@
 import streamlit as st
 import ollama
+import os
+
+OLLAMA_HOST = os.getenv("OLLAMA_HOST", "http://localhost:11434")
+client = ollama.Client(host=OLLAMA_HOST)
+
+
 import base64
 
 st.set_page_config(
@@ -22,8 +28,7 @@ def set_bg(image_file):
         /* Background */
         .stApp {{
             background:
-                linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-                url("data:image/jpg;base64,{encoded}");
+                linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),                url("data:image/jpg;base64,{encoded}");
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -107,8 +112,8 @@ if prompt:
         box = st.empty()
         full_response = ""
 
-        stream = ollama.chat(
-            model="llama3.2:latest",
+        stream = client.chat(
+            model="tinyllama:latest",
             messages=st.session_state.messages,
             stream=True
         )

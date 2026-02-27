@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: streamlit
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: streamlit
+  template:
+    metadata:
+      labels:
+        app: streamlit
+    spec:
+      containers:
+        - name: streamlit
+          image: prasanna369/zzzzz_streamlit:v1
+          ports:
+            - containerPort: 8501
+          env:
+            - name: OLLAMA_HOST
+              value: "http://ollama:11434"
