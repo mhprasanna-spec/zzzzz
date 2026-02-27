@@ -72,6 +72,11 @@ kubectl apply -f services.yaml
 kubectl get pods
 kubectl get svc
 ```
+## 🚀 Pull Correct Model (IMPORTANT)
+```
+kubectl exec -it <ollama-pod-name> -- ollama pull tinyllama
+```
+
 ## 🌐 Access Application
 ( Worker nodes public IP)
 http://<EC2-Public-IP>:<NodePort>
