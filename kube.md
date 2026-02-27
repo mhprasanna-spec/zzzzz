@@ -60,4 +60,18 @@ Ollama → ClusterIP (Internal communication only)
 
 ---
 
+## ⚙️ Deployment Commands
+
+```
+kubectl apply -f ollama-deployment.yaml
+kubectl apply -f streamlit-deployment.yaml
+kubectl apply -f services.yaml
+```
+## 🔍 Verify Deployment
+```
+kubectl get pods
+kubectl get svc
+```
+
+
 
