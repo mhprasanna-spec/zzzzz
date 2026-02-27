@@ -37,4 +37,27 @@ Ollama Pod
 TinyLlama Model (inside container)
 
 ```
+---
+
+## 📦 Kubernetes Components
+## 1️⃣ Streamlit Deployment
+
+Frontend UI
+
+Sends user prompts to Ollama service
+
+## 2️⃣ Ollama Deployment
+
+Runs TinyLlama model
+
+Handles AI inference requests
+
+## 3️⃣ Services
+
+Streamlit → NodePort (External access)
+
+Ollama → ClusterIP (Internal communication only)
+
+---
+
 
