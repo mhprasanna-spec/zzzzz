@@ -72,6 +72,18 @@ kubectl apply -f services.yaml
 kubectl get pods
 kubectl get svc
 ```
+## 🌐 Access Application
+( Worker nodes public IP)
+http://<EC2-Public-IP>:<NodePort>
 
 
+## Delete Everything
+
+```
+kubectl delete deployment streamlit
+kubectl delete deployment ollama
+kubectl delete svc streamlit-service
+kubectl delete svc ollama
+
+```
 
